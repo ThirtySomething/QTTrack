@@ -2,6 +2,8 @@
 #define QTTRACKMAIN_H
 
 #include <QMainWindow>
+#include <memory>
+#include "ctimetrack.h"
 
 namespace Ui {
 class QTTrackMain;
@@ -32,6 +34,10 @@ private:
     Ui::QTTrackMain *ui;
 
     void QTTrackSetup(void);
+
+    void QTTrackTeardown(void);
+
+    std::unique_ptr<CTimeTrack> TimeTracker;
 };
 
 #endif // QTTRACKMAIN_H

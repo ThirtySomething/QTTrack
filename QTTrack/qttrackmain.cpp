@@ -12,14 +12,19 @@ QTTrackMain::QTTrackMain(QWidget *parent) :
 
 QTTrackMain::~QTTrackMain()
 {
+    QTTrackTeardown();
     delete ui;
 }
 
 void QTTrackMain::QTTrackSetup(void)
 {
     ui->WdgCalendar->setFocus();
+    TimeTracker = std::make_unique<CTimeTrack>();
 }
 
+void QTTrackMain::QTTrackTeardown(void)
+{
+}
 
 void QTTrackMain::on_MnuFileExit_triggered()
 {
