@@ -1,0 +1,3 @@
+[submodule "submodules/YAIP"]
+	path = submodules/YAIP
+	url = https://github.com/ThirtySomething/YAIP
