@@ -7,12 +7,19 @@ QTTrackMain::QTTrackMain(QWidget *parent) :
     ui(new Ui::QTTrackMain)
 {
     ui->setupUi(this);
+    QTTrackSetup();
 }
 
 QTTrackMain::~QTTrackMain()
 {
     delete ui;
 }
+
+void QTTrackMain::QTTrackSetup(void)
+{
+    ui->WdgCalendar->setFocus();
+}
+
 
 void QTTrackMain::on_MnuFileExit_triggered()
 {
@@ -36,6 +43,7 @@ void QTTrackMain::on_BtnToday_clicked()
     // Select current day in calendar widget
     QDate dateToday = QDateTime::currentDateTime().date();
     ui->WdgCalendar->setSelectedDate(dateToday);
+    ui->WdgCalendar->setFocus();
 }
 
 void QTTrackMain::on_BtnActionNew_clicked()

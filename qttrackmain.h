@@ -30,6 +30,8 @@ private slots:
 
 private:
     Ui::QTTrackMain *ui;
+
+    void QTTrackSetup(void);
 };
 
 #endif // QTTRACKMAIN_H
