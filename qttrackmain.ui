@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QTTrackMain</class>
+ <widget class="QMainWindow" name="QTTrackMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QTTrackMain</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="GridMain">
+      <item row="0" column="3">
+       <widget class="QPushButton" name="BtnActionNew">
+        <property name="text">
+         <string>Neue Aufgabe</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="BtnToday">
+        <property name="text">
+         <string>Heute</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCalendarWidget" name="WdgCalendar"/>
+      </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="BtnActionContinue">
+        <property name="text">
+         <string>Aufgabe fortsetzen</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3" colspan="2">
+       <widget class="QTableView" name="TabActions"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="MnuFile">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="MnuFileActionNew"/>
+    <addaction name="separator"/>
+    <addaction name="MnuFileExit"/>
+   </widget>
+   <widget class="QMenu" name="MnuAbout">
+    <property name="title">
+     <string>?</string>
+    </property>
+    <addaction name="MnuAboutAbout"/>
+   </widget>
+   <addaction name="MnuFile"/>
+   <addaction name="MnuAbout"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="MnuFileExit">
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+X</string>
+   </property>
+  </action>
+  <action name="MnuAboutAbout">
+   <property name="text">
+    <string>Über</string>
+   </property>
+  </action>
+  <action name="MnuFileActionNew">
+   <property name="text">
+    <string>Neue Aufgabe</string>
+   </property>
+   <property name="toolTip">
+    <string>Neue Aufgabe</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
