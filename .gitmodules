@@ -1,3 +1,6 @@
 [submodule "submodules/YAIP"]
 	path = submodules/YAIP
 	url = https://github.com/ThirtySomething/YAIP
+[submodule "submodules/Catch"]
+	path = submodules/Catch
+	url = https://github.com/catchorg/Catch2
