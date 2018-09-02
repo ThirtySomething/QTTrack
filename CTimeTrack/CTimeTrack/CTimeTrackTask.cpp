@@ -50,28 +50,61 @@ namespace net {
 
 			// ******************************************************************
 			// ******************************************************************
+			std::string CTimeTrackTask::TimeTrackTaskNameGet(void) const
+			{
+				return timeTrackTaskName;
+			}
+
+			// ******************************************************************
+			// ******************************************************************
+			bool CTimeTrackTask::TimeTrackTaskIsEqual(const std::string taskName) const
+			{
+				return (0 == timeTrackTaskName.compare(taskName));
+			}
+
+			// ******************************************************************
+			// ******************************************************************
+			bool CTimeTrackTask::TimeTrackTaskIsEqual(const net::derpaul::timetrack::CTimeTrackTask task) const
+			{
+				std::string taskName = task.TimeTrackTaskNameGet();
+				return TimeTrackTaskIsEqual(taskName);
+			}
+
+			// ******************************************************************
+			// ******************************************************************
+			bool CTimeTrackTask::TimeTrackTaskIsRunning(void) const
+			{
+				return isRunning;
+			}
+
+			// ******************************************************************
+			// ******************************************************************
 			bool CTimeTrackTask::TimeTrackTaskStart(void)
 			{
+				bool started = false;
 				if (false == isRunning)
 				{
 					time(&timeStart);
 					isRunning = true;
 					isMeasured = false;
+					started = true;
 				}
-				return (!isRunning);
+				return started;
 			}
 
 			// ******************************************************************
 			// ******************************************************************
 			bool CTimeTrackTask::TimeTrackTaskEnd(void)
 			{
+				bool ended = false;
 				if (true == isRunning)
 				{
 					time(&timeEnd);
 					isRunning = false;
 					isMeasured = true;
+					ended = true;
 				}
-				return (!isRunning);
+				return ended;
 			}
 
 			// ******************************************************************

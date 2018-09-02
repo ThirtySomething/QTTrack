@@ -20,17 +20,23 @@ I'm using the [YAIP][YAIP] INI parser to persist the data and some settings. The
 
 ## Roadmap
 * Implement the functionality in <code>CTimeTrack</code>
-    * Start a task
-    * Stop a task
-    * Calculate duration
-    * Save task list
-    * Load task list
+    * Task
+        * Start a task
+        * Stop a task
+        * Calculate duration
+    * Task list
+        * Load
+        * Save
+        * Add new task
+        * Delete existing task
     * Common settings for application
         * Load
         * Save
 * Create the UI using [QT][QT]
+* Create tests based on [Catch2-Framework][Catch]
 
 
+[Catch]:https://github.com/catchorg/Catch2
 [CPP]:https://en.wikipedia.org/wiki/C%2B%2B
 [QT]:https://www.qt.io/
 [QTWiki]:https://en.wikipedia.org/wiki/Qt_(software)

@@ -19,10 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CTimeTrackTest.cpp" />
+    <None Include="Project.props" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Project.props" />
+    <ClInclude Include="CTImeTrackTaskTest.h" />
+    <ClInclude Include="CTImeTrackTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CTimeTrackTest.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

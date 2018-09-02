@@ -21,6 +21,7 @@
 	<ClInclude Include="$(SolutionDir)\CTimeTrack\CTimeTrack.h"/>
 	<ClInclude Include="$(SolutionDir)\CTimeTrack\CTimeTrackConfig.h"/>
 	<ClInclude Include="$(SolutionDir)\CTimeTrack\CTimeTrackData.h"/>
+	<ClInclude Include="$(SolutionDir)\CTimeTrack\CTimeTrackTask.h"/>
   </ItemGroup>
   <ItemGroup>
     <BuildMacro Include="CTimeTrack">

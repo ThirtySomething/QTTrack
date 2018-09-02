@@ -17,55 +17,5 @@
 // along with CTimeTrack/QTTimeTrack. If not, see <http://www.gnu.org/licenses/>.
 //******************************************************************************
 
-#pragma once
-
-#include <string>
-#include <ctime>
-
-/**
- * Namespace of time tracker
- */
-namespace net {
-	/**
-	 * Namespace of time tracker
-	 */
-	namespace derpaul {
-		/**
-		 * Namespace of time tracker
-		 */
-		namespace timetrack {
-			class CTimeTrackTask
-			{
-			public:
-				CTimeTrackTask(std::string taskName);
-
-				virtual ~CTimeTrackTask(void);
-
-				std::string TimeTrackTaskNameGet(void) const;
-
-				bool TimeTrackTaskIsEqual(const std::string taskName) const;
-
-				bool TimeTrackTaskIsEqual(const net::derpaul::timetrack::CTimeTrackTask task) const;
-
-				bool TimeTrackTaskIsRunning(void) const;
-
-				bool TimeTrackTaskStart(void);
-
-				bool TimeTrackTaskEnd(void);
-
-				double TimeTrackTaskDuration(void);
-
-			private:
-				std::string timeTrackTaskName;
-
-				time_t timeStart;
-
-				time_t timeEnd;
-
-				bool isRunning;
-
-				bool isMeasured;
-			};
-		}
-	}
-}
+#define CATCH_CONFIG_MAIN
+#include "./../../submodules/Catch/single_include/catch2/catch.hpp"
