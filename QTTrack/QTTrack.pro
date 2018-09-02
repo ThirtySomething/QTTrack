@@ -24,18 +24,10 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        qttrackmain.cpp \
-        ctimetrack.cpp \
-        ctimetrackconfig.cpp \
-        ctimetrackdata.cpp \
-        ../submodules/YAIP/src/YAIP++.cpp
+        qttrackmain.cpp
 
 HEADERS += \
         qttrackmain.h \
-        ctimetrack.h \
-        ctimetrackconfig.h \
-        ctimetrackdata.h \
-        ../submodules/YAIP/src/YAIP++.h
 
 FORMS += \
         qttrackmain.ui
@@ -44,3 +36,16 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../bin/ -lCTimeTrack32
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../bin/ -lCTimeTrack32d
+else:unix: LIBS += -L$$PWD/../bin/ -lCTimeTrack32
+
+INCLUDEPATH += $$PWD/../CTimeTrack/CTimeTrack
+DEPENDPATH += $$PWD/../CTimeTrack/CTimeTrack
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../bin/libCTimeTrack32.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../bin/libCTimeTrack32d.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../bin/CTimeTrack32.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../bin/CTimeTrack32d.lib
+else:unix: PRE_TARGETDEPS += $$PWD/../bin/libCTimeTrack32.a

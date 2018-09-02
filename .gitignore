@@ -1,2 +1,3 @@
 *.user
 /build-QTTrack-*
+/CTimeTrack/.vs
