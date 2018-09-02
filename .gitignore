@@ -1,3 +1,4 @@
 *.user
-/build-QTTrack-*
+/Bin/*
+/Build/*
 /CTimeTrack/.vs
