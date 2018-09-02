@@ -23,12 +23,14 @@
     <ClInclude Include="CTimeTrack.h" />
     <ClInclude Include="CTimeTrackConfig.h" />
     <ClInclude Include="CTimeTrackData.h" />
+    <ClInclude Include="CTimeTrackTask.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\submodules\YAIP\src\YAIP++.cpp" />
     <ClCompile Include="CTimeTrack.cpp" />
     <ClCompile Include="CTimeTrackConfig.cpp" />
     <ClCompile Include="CTimeTrackData.cpp" />
+    <ClCompile Include="CTimeTrackTask.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CTimeTrack.props" />

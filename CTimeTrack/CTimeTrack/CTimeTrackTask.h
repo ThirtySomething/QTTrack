@@ -17,7 +17,10 @@
 // along with CTimeTrack/QTTimeTrack. If not, see <http://www.gnu.org/licenses/>.
 //******************************************************************************
 
-#include "CTimeTrackData.h"
+#pragma once
+
+#include <string>
+#include <ctime>
 
 /**
  * Namespace of time tracker
@@ -31,31 +34,30 @@ namespace net {
 		 * Namespace of time tracker
 		 */
 		namespace timetrack {
-			// ******************************************************************
-			// ******************************************************************
-			CTimeTrackData::CTimeTrackData(std::string timeTrackDataConfigFileName)
-				: timeTrackDataConfigFileName(timeTrackDataConfigFileName)
+			class CTimeTrackTask
 			{
-				timeTrackDataConfig = std::make_unique<net::derpaul::yaip::YAIP>();
-			}
+			public:
+				CTimeTrackTask(std::string taskName);
 
-			// ******************************************************************
-			// ******************************************************************
-			CTimeTrackData::~CTimeTrackData(void)
-			{
-			}
+				virtual ~CTimeTrackTask(void);
 
-			// ******************************************************************
-			// ******************************************************************
-			void CTimeTrackData::TimeTrackDataInit(void)
-			{
-				if (false == timeTrackDataConfig->INIFileLoad(timeTrackDataConfigFileName))
-				{
-					// timeTrackDataConfig->SectionKeyValueSet(nameSectionTimeTrack, nameKeyDataFile, defaultKeyDataFile);
-					timeTrackDataConfig->INIFileSave(timeTrackDataConfigFileName);
-				}
-			}
+				bool TimeTrackTaskStart(void);
+
+				bool TimeTrackTaskEnd(void);
+
+				double TimeTrackTaskDuration(void);
+
+			private:
+				std::string timeTrackTaskName;
+
+				time_t timeStart;
+
+				time_t timeEnd;
+
+				bool isRunning;
+
+				bool isMeasured;
+			};
 		}
 	}
 }
-

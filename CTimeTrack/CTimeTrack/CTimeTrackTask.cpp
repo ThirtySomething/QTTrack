@@ -17,7 +17,7 @@
 // along with CTimeTrack/QTTimeTrack. If not, see <http://www.gnu.org/licenses/>.
 //******************************************************************************
 
-#include "CTimeTrackData.h"
+#include "CTimeTrackTask.h"
 
 /**
  * Namespace of time tracker
@@ -33,29 +33,60 @@ namespace net {
 		namespace timetrack {
 			// ******************************************************************
 			// ******************************************************************
-			CTimeTrackData::CTimeTrackData(std::string timeTrackDataConfigFileName)
-				: timeTrackDataConfigFileName(timeTrackDataConfigFileName)
-			{
-				timeTrackDataConfig = std::make_unique<net::derpaul::yaip::YAIP>();
-			}
-
-			// ******************************************************************
-			// ******************************************************************
-			CTimeTrackData::~CTimeTrackData(void)
+			CTimeTrackTask::CTimeTrackTask(std::string taskName)
+				: timeTrackTaskName(taskName)
+				, timeStart(0)
+				, timeEnd (0)
+				, isRunning(false)
+				, isMeasured(false)
 			{
 			}
 
 			// ******************************************************************
 			// ******************************************************************
-			void CTimeTrackData::TimeTrackDataInit(void)
+			CTimeTrackTask::~CTimeTrackTask(void)
 			{
-				if (false == timeTrackDataConfig->INIFileLoad(timeTrackDataConfigFileName))
+			}
+
+			// ******************************************************************
+			// ******************************************************************
+			bool CTimeTrackTask::TimeTrackTaskStart(void)
+			{
+				if (false == isRunning)
 				{
-					// timeTrackDataConfig->SectionKeyValueSet(nameSectionTimeTrack, nameKeyDataFile, defaultKeyDataFile);
-					timeTrackDataConfig->INIFileSave(timeTrackDataConfigFileName);
+					time(&timeStart);
+					isRunning = true;
+					isMeasured = false;
 				}
+				return (!isRunning);
+			}
+
+			// ******************************************************************
+			// ******************************************************************
+			bool CTimeTrackTask::TimeTrackTaskEnd(void)
+			{
+				if (true == isRunning)
+				{
+					time(&timeEnd);
+					isRunning = false;
+					isMeasured = true;
+				}
+				return (!isRunning);
+			}
+
+			// ******************************************************************
+			// ******************************************************************
+			double CTimeTrackTask::TimeTrackTaskDuration(void)
+			{
+				double duration = 0.0;
+
+				if (true == isMeasured)
+				{
+					duration = difftime(timeEnd, timeStart);
+				}
+
+				return duration;
 			}
 		}
 	}
 }
-

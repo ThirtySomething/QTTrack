@@ -27,6 +27,9 @@
     <ClInclude Include="..\..\submodules\YAIP\src\YAIP++.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CTimeTrackTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CTimeTrack.cpp">
@@ -39,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\submodules\YAIP\src\YAIP++.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeTrackTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
