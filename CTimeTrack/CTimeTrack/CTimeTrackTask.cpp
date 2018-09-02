@@ -79,6 +79,13 @@ namespace net {
 
 			// ******************************************************************
 			// ******************************************************************
+			bool CTimeTrackTask::TimeTrackTaskIsCalculable(void) const
+			{
+				return isMeasured;
+			}
+
+			// ******************************************************************
+			// ******************************************************************
 			bool CTimeTrackTask::TimeTrackTaskStart(void)
 			{
 				bool started = false;

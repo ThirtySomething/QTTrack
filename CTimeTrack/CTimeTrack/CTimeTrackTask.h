@@ -49,6 +49,8 @@ namespace net {
 
 				bool TimeTrackTaskIsRunning(void) const;
 
+				bool TimeTrackTaskIsCalculable(void) const;
+
 				bool TimeTrackTaskStart(void);
 
 				bool TimeTrackTaskEnd(void);
