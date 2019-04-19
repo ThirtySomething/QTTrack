@@ -20,7 +20,7 @@
 #pragma once
 
 #include <memory>
-#include "./../../submodules/YAIP/src/YAIP++.h"
+#include "YAIP.h"
 
 /**
  * Namespace of time tracker

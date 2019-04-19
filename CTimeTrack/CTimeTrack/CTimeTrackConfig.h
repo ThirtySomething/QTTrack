@@ -21,7 +21,7 @@
 
 #include <memory>
 #include <string>
-#include "./../../submodules/YAIP/src/YAIP++.h"
+#include "YAIP.h"
 
 /**
  * Namespace of time tracker

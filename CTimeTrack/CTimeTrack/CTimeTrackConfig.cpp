@@ -67,6 +67,7 @@ namespace net {
 			std::string CTimeTrackConfig::DataFileNameGet(void)
 			{
 				return timeTrackConfig->SectionKeyValueGet(nameSectionTimeTrack, nameKeyDataFile, defaultKeyDataFile);
+				timeTrackConfig->INIFileSave(timeTrackConfigFileName);
 			}
 
 			// ******************************************************************
@@ -74,9 +75,7 @@ namespace net {
 			void CTimeTrackConfig::DataFileNameSet(std::string timeTrackDataFileName)
 			{
 				timeTrackConfig->SectionKeyValueSet(nameSectionTimeTrack, nameKeyDataFile, timeTrackDataFileName);
-				timeTrackConfig->INIFileSave(timeTrackConfigFileName);
 			}
-
 		}
 	}
 }
